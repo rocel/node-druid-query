@@ -37,7 +37,7 @@ q1
   .aggregation('doubleSum', 'e', 'events')
   .aggregation('doubleSum', 'randomNumberSum', 'outColumn')
   .postAggregation('arithmetic', 'avg_random', '/', [
-    Query.postAggregation('fieldAccess', null, 'randomNumberSum')
+    Query.postAggregation('fieldAccess', null, 'randomNumberSum'),
     Query.postAggregation('fieldAccess', null, 'rows')
   ])
   .interval(Date.UTC(2012, 9, 1), Date.UTC(2020, 0, 1))
